@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql_db:
+    image: mysql:8.0
+    container_name: desempeno_mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: myroot_password_12345
+      MYSQL_DATABASE: prueba_desempenoSQL
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: myuser_password_12345
+    ports:
+      - "3406:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
